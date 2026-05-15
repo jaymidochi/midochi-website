@@ -47,3 +47,4 @@ src/
 └── index.css        # Tailwind imports and theme variables
 ```
 # midochi-website
+# midochi-website
