@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #193438;
+}
+
+h1 {
+  font-family: 'Newsreader', serif;
+  font-weight: 400;
+  font-size: 42px;
+  color: #fff;
+  text-align: center;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.4em;
+  }
+}
