@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-const HEARTBEAT_MS = 15000
+const HEARTBEAT_MS = 60000
 const MIN_VISIBLE_RATIO = 0.5
 
 function ph() {
