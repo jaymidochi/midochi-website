@@ -83,12 +83,12 @@ export async function POST(req) {
   if (!emailMatch) return ok()
   const email = emailMatch[0].toLowerCase()
 
-  // Pull the parent visit alert to find the anonymous distinct ID
-  const parent = await slack('conversations.replies', {
-    channel: event.channel,
-    ts: event.thread_ts,
-    limit: 1,
-  })
+  // Pull the parent visit alert to find the anonymous distinct ID.
+  // Read methods take query params, not a JSON body.
+  const params = new URLSearchParams({ channel: event.channel, ts: event.thread_ts, limit: '1' })
+  const parent = await fetch(`https://slack.com/api/conversations.replies?${params}`, {
+    headers: { Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}` },
+  }).then((r) => r.json())
   const parentText = JSON.stringify(parent.messages?.[0] || {})
   const idMatch = parentText.match(DISTINCT_ID_RE)
   if (!idMatch) {
