@@ -2,6 +2,6 @@
 title: Case studies
 ---
 
-Placeholder for the Optimism case study and other client work. Replace the slides URL below with a real Google Slides embed link (File → Share → Publish to web → Embed).
+Placeholder intro copy for the case study below. Jay to replace.
 
-{{slides:https://docs.google.com/presentation/d/e/2PACX-EXAMPLE/embed?start=false&loop=false}}
+{{slides:https://docs.google.com/presentation/d/1ueJelEtLPnEdTeS1e_MJKeLt1B2APbE-z3fOrGGlN4M/embed?start=false&loop=false}}
