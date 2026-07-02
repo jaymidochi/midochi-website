@@ -93,7 +93,10 @@ export async function POST(req) {
   const idMatch = parentText.match(DISTINCT_ID_RE)
   if (!idMatch) {
     await react(event.channel, event.ts, 'x')
-    await replyInThread(event.channel, event.thread_ts, 'No distinct ID found in the parent message. Is this a visit alert thread?')
+    const diag = parent.ok
+      ? `parent found: ${parent.messages?.length > 0}, text starts: "${parentText.slice(0, 120)}"`
+      : `Slack API error: ${parent.error}`
+    await replyInThread(event.channel, event.thread_ts, `No distinct ID found in the parent message. Debug: ${diag}`)
     return ok()
   }
   const anonDistinctId = idMatch[1]
