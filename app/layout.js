@@ -1,5 +1,6 @@
 import './globals.css'
 import Script from 'next/script'
+import ConsentBanner from '../components/ConsentBanner'
 
 export const metadata = {
   title: 'Midochi',
@@ -28,7 +29,10 @@ export default function RootLayout({ children }) {
           {posthogSnippet}
         </Script>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ConsentBanner />
+      </body>
     </html>
   )
 }
