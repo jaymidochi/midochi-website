@@ -1,5 +1,6 @@
 import { getSections } from '../../lib/content'
 import { YouTubeEmbed, SlidesEmbed } from '../../components/Embeds'
+import EngagementTracker from '../../components/EngagementTracker'
 
 export const metadata = {
   title: 'Account-Based Marketing | Midochi',
@@ -9,6 +10,7 @@ export default function AbmPage() {
   const sections = getSections('abm')
   return (
     <main className="page">
+      <EngagementTracker />
       {sections.map((section) => (
         <section key={section.slug} className="section" data-section={section.slug}>
           {section.title && section.slug === 'hero' ? (
